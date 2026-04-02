@@ -1,0 +1,34 @@
+# IDE
+.omc/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Package files
+*.zip
+*.rar
+*.7z
+
+# PDF files (usually downloaded resources)
+*.pdf
+
+# Dependencies
+node_modules/
