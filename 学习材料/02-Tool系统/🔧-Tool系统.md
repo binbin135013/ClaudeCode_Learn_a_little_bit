@@ -42,7 +42,7 @@ Tool 是 Claude Code 能力的核心载体，45+ 工具分为 12 个类别。每
 
 ### 1. Name（名称）
 
-工具的唯一标识符。
+工具的唯一标识符 + 可选别名，支持向后兼容。
 
 ```
 Read, Write, Edit, Bash, Glob, Grep, WebSearch...
@@ -50,7 +50,7 @@ Read, Write, Edit, Bash, Glob, Grep, WebSearch...
 
 ### 2. Schema（模式）
 
-输入输出的验证规则，确保传入正确的数据。
+Zod Schema 同时用于：运行时验证 + API通信，类型安全屏障。
 
 ```typescript
 // Read 工具的 Schema 示例
@@ -70,7 +70,7 @@ const ReadSchema = z.object({
 
 ### 3. Permissions（权限）
 
-工具的安全级别，决定是否需要用户确认。
+三层分层检查：validateInput → hasPermissions → checkPermissions。
 
 | 权限级别 | 说明 | 需要确认 |
 |---------|------|---------|
@@ -81,7 +81,7 @@ const ReadSchema = z.object({
 
 ### 4. Execution（执行）
 
-工具的实际逻辑，返回执行结果。
+核心方法 + contextModifier，上下文修改通道。
 
 ```typescript
 const ReadTool = {
@@ -96,7 +96,7 @@ const ReadTool = {
 
 ### 5. Rendering（渲染）
 
-工具结果在 UI 中的显示方式。
+6个渲染方法覆盖完整生命周期，React组件集成。
 
 | 渲染类型 | 用途 |
 |---------|------|
@@ -428,7 +428,7 @@ stateDiagram-v2
 | **Completed** | 已完成 | 执行成功，等待 yield |
 | **Yielded** | 已产出 | 结果已返回给调用方 |
 
-### 并发分区策略
+### 并发分区策略（贪心算法）
 
 Claude Code 使用 `partitionToolCalls()` 按 `isConcurrencySafe` 分批执行：
 
@@ -445,6 +445,13 @@ const partitions = partitionToolCalls(toolCalls, (tool) => ({
 - 连续安全工具可并行
 - 非安全工具独占执行
 - 当前批次有非安全工具时，后续安全工具必须等待
+
+**贪心分区示例：**
+```
+输入：[Read(a.ts), Read(b.ts), Bash(ls), Read(c.ts)]
+分区：安全工具连续→合并Batch，非安全→开新Batch
+结果：Batch1[Read(a,b)]并行, Batch2[Bash]独占, Batch3[Read(c)]等待Batch2
+```
 
 ## 9. 延迟工具发现
 

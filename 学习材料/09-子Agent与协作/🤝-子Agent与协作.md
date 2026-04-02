@@ -142,6 +142,34 @@ graph TD
 | Tool Definitions | 工具定义 | 100% |
 | Team Memory | 团队共享知识 | 100% |
 
+### 3.3 字节级继承原理
+
+**为什么需要字节级而非语义级？**
+- Prompt cache通过字节前缀匹配复用KV cache
+- 任一字符差异（空格、换行）→ 缓存不命中
+
+**CacheSafeParams五维度（全部一致→缓存命中）：**
+```
+systemPrompt, userContext, systemContext, toolUseContext, forkContextMessages
+```
+
+**buildForkedMessages的占位符设计：**
+```
+1. 保留父assistant消息（分配新UUID）
+2. 收集所有tool_use块
+3. 为每个tool_use生成固定占位符："Fork started -- processing in background"
+4. 构建单条user消息包含占位符+子任务指令
+效果：所有Fork子智能体共享相同前缀 → 最大化缓存命中
+```
+
+**缓存效率量化示例：**
+```
+场景：父对话50K历史 + 3个tool_use(2K) + 系统提示工具(10K)
+传统模式：62K × 3 = 186K token
+Fork模式：62K + 600 = 62.6K
+节省比例：≈66%
+```
+
 ### 3.3 缓存优化实践
 
 ```typescript
