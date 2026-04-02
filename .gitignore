@@ -6,6 +6,11 @@
 *.swo
 *~
 
+# Claude & Agent related
+.claude/
+.sandbox-home/
+.clawd-todos.json
+
 # OS
 .DS_Store
 Thumbs.db
@@ -32,3 +37,11 @@ desktop.ini
 
 # Dependencies
 node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Rust
+target/
