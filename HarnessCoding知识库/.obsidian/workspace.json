@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
+                "file": "00-入口/00-01-🏠-知识库首页.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "16-04-🦀-claw-code-parity-Rust实现"
+              "title": "00-01-🏠-知识库首页"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
+                "file": "00-入口/00-01-🏠-知识库首页.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "16-04-🦀-claw-code-parity-Rust实现 的反向链接列表"
+              "title": "00-01-🏠-知识库首页 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
+                "file": "00-入口/00-01-🏠-知识库首页.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "16-04-🦀-claw-code-parity-Rust实现 的出链列表"
+              "title": "00-01-🏠-知识库首页 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
+                "file": "00-入口/00-01-🏠-知识库首页.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "16-04-🦀-claw-code-parity-Rust实现 的大纲"
+              "title": "00-01-🏠-知识库首页 的大纲"
             }
           }
         ]
@@ -180,13 +180,18 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
   "active": "b7256987cbe6506b",
   "lastOpenFiles": [
-    "未命名.canvas",
+    "00-全局总图.canvas",
+    "学习路径-总图.canvas",
+    "OMC体系-总图.canvas",
+    "CLAUDE.md",
     "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
+    "未命名.canvas",
     "16-OpenCode与开源Agent/16-03-🐍-claw-code-Python重写.md",
     "16-OpenCode与开源Agent/16-01-🚀-OpenCode与开源Agent指南.md",
     "16-OpenCode与开源Agent/16-02-🤖-oh-my-openagent全解析.md",
@@ -211,7 +216,6 @@
     "06-上下文管理/06-01-📦-上下文管理.md",
     "17-Superpowers/17-04-🛠️-Superpowers最佳实践.md",
     "17-Superpowers/17-03-🎯-Superpowers方法论.md",
-    "17-Superpowers/17-02-🧠-Superpowers核心Skill.md",
     "16-OpenCode与开源Agent",
     "HarnessCoding知识库.zip",
     "18-MCP系统",

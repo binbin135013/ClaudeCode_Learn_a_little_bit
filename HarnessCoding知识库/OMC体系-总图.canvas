@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "id": "a1b2c3d4e5f60001",
+      "type": "text",
+      "x": 400,
+      "y": 50,
+      "width": 400,
+      "height": 60,
+      "color": "1",
+      "text": "# OMC Framework 体系\n*Oh-My-ClaudeCode 智能编排框架*"
+    },
+    {
+      "id": "a1b2c3d4e5f60002",
+      "type": "group",
+      "x": 50,
+      "y": 150,
+      "width": 350,
+      "height": 450,
+      "color": "1",
+      "label": "OMC核心"
+    },
+    {
+      "id": "a1b2c3d4e5f60003",
+      "type": "group",
+      "x": 450,
+      "y": 150,
+      "width": 350,
+      "height": 450,
+      "color": "3",
+      "label": "方法论"
+    },
+    {
+      "id": "a1b2c3d4e5f60004",
+      "type": "group",
+      "x": 850,
+      "y": 150,
+      "width": 350,
+      "height": 450,
+      "color": "4",
+      "label": "Superpowers"
+    },
+    {
+      "id": "a1b2c3d4e5f60005",
+      "type": "file",
+      "x": 80,
+      "y": 200,
+      "width": 290,
+      "height": 50,
+      "file": "13-OMC完全指南/13-01-🏁-OMC入门.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60006",
+      "type": "file",
+      "x": 80,
+      "y": 260,
+      "width": 290,
+      "height": 50,
+      "file": "13-OMC完全指南/13-02-🎯-OMC核心概念.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60007",
+      "type": "file",
+      "x": 80,
+      "y": 320,
+      "width": 290,
+      "height": 50,
+      "file": "13-OMC完全指南/13-03-🔄-OMC工作流.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60008",
+      "type": "file",
+      "x": 80,
+      "y": 380,
+      "width": 290,
+      "height": 50,
+      "file": "13-OMC完全指南/13-04-🛠️-OMC自定义开发.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60009",
+      "type": "file",
+      "x": 80,
+      "y": 440,
+      "width": 290,
+      "height": 50,
+      "file": "13-OMC完全指南/13-05-📒-OMC-Notepad内部机制.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60010",
+      "type": "file",
+      "x": 480,
+      "y": 200,
+      "width": 290,
+      "height": 50,
+      "file": "14-方法论/14-01-🎯-Skill选择决策树.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60011",
+      "type": "file",
+      "x": 480,
+      "y": 260,
+      "width": 290,
+      "height": 50,
+      "file": "14-方法论/14-02-🔄-Ralph循环最佳实践.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60012",
+      "type": "file",
+      "x": 480,
+      "y": 320,
+      "width": 290,
+      "height": 50,
+      "file": "14-方法论/14-03-🤖-Team协作拓扑.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60013",
+      "type": "file",
+      "x": 480,
+      "y": 380,
+      "width": 290,
+      "height": 50,
+      "file": "14-方法论/14-04-💡-Deep-Interview工作流.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60014",
+      "type": "file",
+      "x": 480,
+      "y": 440,
+      "width": 290,
+      "height": 50,
+      "file": "14-方法论/14-05-⏸️-Phase-Gate门禁审查.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60015",
+      "type": "file",
+      "x": 880,
+      "y": 200,
+      "width": 290,
+      "height": 50,
+      "file": "17-Superpowers/17-01-🚀-Superpowers入门.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60016",
+      "type": "file",
+      "x": 880,
+      "y": 260,
+      "width": 290,
+      "height": 50,
+      "file": "17-Superpowers/17-02-🧠-Superpowers核心Skill.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60017",
+      "type": "file",
+      "x": 880,
+      "y": 320,
+      "width": 290,
+      "height": 50,
+      "file": "17-Superpowers/17-03-🎯-Superpowers方法论.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60018",
+      "type": "file",
+      "x": 880,
+      "y": 380,
+      "width": 290,
+      "height": 50,
+      "file": "17-Superpowers/17-04-🛠️-Superpowers最佳实践.md"
+    },
+    {
+      "id": "a1b2c3d4e5f60019",
+      "type": "text",
+      "x": 140,
+      "y": 520,
+      "width": 180,
+      "height": 40,
+      "color": "1",
+      "text": "**Ralph持久化循环**"
+    },
+    {
+      "id": "a1b2c3d4e5f60020",
+      "type": "text",
+      "x": 140,
+      "y": 565,
+      "width": 180,
+      "height": 40,
+      "color": "1",
+      "text": "**Ultrawork并行引擎**"
+    },
+    {
+      "id": "a1b2c3d4e5f60021",
+      "type": "text",
+      "x": 540,
+      "y": 520,
+      "width": 180,
+      "height": 40,
+      "color": "3",
+      "text": "**Team协作拓扑**"
+    },
+    {
+      "id": "a1b2c3d4e5f60022",
+      "type": "text",
+      "x": 540,
+      "y": 565,
+      "width": 180,
+      "height": 40,
+      "color": "3",
+      "text": "**Deep-Interview**"
+    },
+    {
+      "id": "a1b2c3d4e5f60023",
+      "type": "text",
+      "x": 940,
+      "y": 520,
+      "width": 180,
+      "height": 40,
+      "color": "3",
+      "text": "**Phase-Gate门禁**"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1b2c3d4e5f60001",
+      "fromNode": "a1b2c3d4e5f60002",
+      "toNode": "a1b2c3d4e5f60003",
+      "label": "驱动"
+    },
+    {
+      "id": "e1b2c3d4e5f60002",
+      "fromNode": "a1b2c3d4e5f60003",
+      "toNode": "a1b2c3d4e5f60004",
+      "label": "增强"
+    },
+    {
+      "id": "e1b2c3d4e5f60003",
+      "fromNode": "a1b2c3d4e5f60019",
+      "toNode": "a1b2c3d4e5f60011",
+      "label": "实现"
+    },
+    {
+      "id": "e1b2c3d4e5f60004",
+      "fromNode": "a1b2c3d4e5f60020",
+      "toNode": "a1b2c3d4e5f60012",
+      "label": "支撑"
+    },
+    {
+      "id": "e1b2c3d4e5f60005",
+      "fromNode": "a1b2c3d4e5f60021",
+      "toNode": "a1b2c3d4e5f60013",
+      "label": "落地"
+    },
+    {
+      "id": "e1b2c3d4e5f60006",
+      "fromNode": "a1b2c3d4e5f60022",
+      "toNode": "a1b2c3d4e5f60014",
+      "label": "融入"
+    },
+    {
+      "id": "e1b2c3d4e5f60007",
+      "fromNode": "a1b2c3d4e5f60023",
+      "toNode": "a1b2c3d4e5f60018",
+      "label": "验证"
+    }
+  ]
+}
