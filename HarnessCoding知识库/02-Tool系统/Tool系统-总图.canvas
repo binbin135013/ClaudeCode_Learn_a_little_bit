@@ -1,0 +1,284 @@
+{
+  "nodes": [
+    {
+      "id": "0000000000000001",
+      "type": "text",
+      "x": 300,
+      "y": 20,
+      "width": 400,
+      "height": 60,
+      "text": "# 🔧 Tool系统架构",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000002",
+      "type": "group",
+      "x": 200,
+      "y": 100,
+      "width": 600,
+      "height": 160,
+      "label": "核心基础设施",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000003",
+      "type": "text",
+      "x": 220,
+      "y": 120,
+      "width": 160,
+      "height": 60,
+      "text": "**QueryEngine**\n工具调用发起方",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000004",
+      "type": "text",
+      "x": 420,
+      "y": 120,
+      "width": 160,
+      "height": 60,
+      "text": "**ToolBridge**\n工具桥接层",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000005",
+      "type": "text",
+      "x": 620,
+      "y": 120,
+      "width": 160,
+      "height": 60,
+      "text": "**ToolRegistry**\n工具注册表",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000006",
+      "type": "group",
+      "x": 50,
+      "y": 280,
+      "width": 200,
+      "height": 240,
+      "label": "文件系统工具",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000007",
+      "type": "text",
+      "x": 60,
+      "y": 300,
+      "width": 180,
+      "height": 200,
+      "text": "**FileOps (8个)**\n- Read (readOnly)\n- Write (write)\n- Edit (write)\n- Mkdir (write)\n- Rm (destructive)\n- Glob (readOnly)\n- Grep (readOnly)\n- CopilotEdit (write)",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000008",
+      "type": "group",
+      "x": 270,
+      "y": 280,
+      "width": 200,
+      "height": 120,
+      "label": "Git 工具",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000009",
+      "type": "text",
+      "x": 280,
+      "y": 300,
+      "width": 180,
+      "height": 80,
+      "text": "**Git (6个)**\n- GitLog, GitStatus\n- GitBranch, GitDiff\n- GitCommit, GitPush",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000010",
+      "type": "group",
+      "x": 490,
+      "y": 280,
+      "width": 200,
+      "height": 120,
+      "label": "Web 工具",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000011",
+      "type": "text",
+      "x": 500,
+      "y": 300,
+      "width": 180,
+      "height": 80,
+      "text": "**Web (2个)**\n- WebFetch\n- WebSearch",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000012",
+      "type": "group",
+      "x": 710,
+      "y": 280,
+      "width": 200,
+      "height": 120,
+      "label": "Bash 工具",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000013",
+      "type": "text",
+      "x": 720,
+      "y": 300,
+      "width": 180,
+      "height": 80,
+      "text": "**Bash (1个)**\n- Bash (destructive)\n⚠️ 最危险工具",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000014",
+      "type": "text",
+      "x": 270,
+      "y": 420,
+      "width": 200,
+      "height": 100,
+      "text": "**五元素协议**\n1. Name 名称\n2. Schema 模式\n3. Permissions 权限\n4. Execution 执行\n5. Rendering 渲染",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000015",
+      "type": "text",
+      "x": 490,
+      "y": 420,
+      "width": 200,
+      "height": 100,
+      "text": "**buildTool 工厂**\n- 防御性构造\n- Schema 验证\n- 统一接口",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000016",
+      "type": "text",
+      "x": 50,
+      "y": 540,
+      "width": 200,
+      "height": 80,
+      "text": "**权限级别**\n- readOnly: 只读\n- write: 写入\n- destructive: 危险\n- bypass: 跳过检查",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000017",
+      "type": "text",
+      "x": 270,
+      "y": 540,
+      "width": 200,
+      "height": 80,
+      "text": "**流式执行**\nIdle → Streaming\n→ Partial → Complete\n四阶段状态机",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000018",
+      "type": "text",
+      "x": 490,
+      "y": 540,
+      "width": 200,
+      "height": 80,
+      "text": "**延迟发现**\nToolSearchTool\n按需加载减少\nprompt token",
+      "color": "4"
+    },
+    {
+      "id": "0000000000000019",
+      "type": "file",
+      "x": 710,
+      "y": 540,
+      "width": 200,
+      "height": 80,
+      "file": "02-Tool系统/02-01-🔧-Tool系统.md",
+      "color": "4"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e000000000000001",
+      "fromNode": "0000000000000003",
+      "fromSide": "right",
+      "toNode": "0000000000000004",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000002",
+      "fromNode": "0000000000000004",
+      "fromSide": "right",
+      "toNode": "0000000000000005",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000003",
+      "fromNode": "0000000000000006",
+      "fromSide": "top",
+      "toNode": "0000000000000002",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000004",
+      "fromNode": "0000000000000008",
+      "fromSide": "top",
+      "toNode": "0000000000000002",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000005",
+      "fromNode": "0000000000000010",
+      "fromSide": "top",
+      "toNode": "0000000000000002",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000006",
+      "fromNode": "0000000000000012",
+      "fromSide": "top",
+      "toNode": "0000000000000002",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000007",
+      "fromNode": "0000000000000014",
+      "fromSide": "top",
+      "toNode": "0000000000000008",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000008",
+      "fromNode": "0000000000000015",
+      "fromSide": "top",
+      "toNode": "0000000000000010",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000009",
+      "fromNode": "0000000000000016",
+      "fromSide": "top",
+      "toNode": "0000000000000006",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000010",
+      "fromNode": "0000000000000017",
+      "fromSide": "top",
+      "toNode": "0000000000000012",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "e000000000000011",
+      "fromNode": "0000000000000018",
+      "fromSide": "top",
+      "toNode": "0000000000000015",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    }
+  ]
+}

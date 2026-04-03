@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "d122b76cf6bb8223",
+        "id": "4cc9e4826d22ece8",
         "type": "tabs",
         "children": [
           {
-            "id": "b7256987cbe6506b",
+            "id": "3f407da74ab4b02e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "00-入口/00-01-🏠-知识库首页.md",
-                "mode": "source",
-                "source": false
+                "file": "OMC体系-总图.canvas",
+                "viewState": {
+                  "x": 625,
+                  "y": 327.5,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "00-01-🏠-知识库首页"
+              "icon": "lucide-layout-dashboard",
+              "title": "OMC体系-总图"
             }
           }
         ]
@@ -94,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00-入口/00-01-🏠-知识库首页.md",
+                "file": "OMC体系-总图.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +107,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "00-01-🏠-知识库首页 的反向链接列表"
+              "title": "OMC体系-总图 的反向链接列表"
             }
           },
           {
@@ -113,12 +116,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00-入口/00-01-🏠-知识库首页.md",
+                "file": "OMC体系-总图.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "00-01-🏠-知识库首页 的出链列表"
+              "title": "OMC体系-总图 的出链列表"
             }
           },
           {
@@ -156,13 +159,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00-入口/00-01-🏠-知识库首页.md",
+                "file": "OMC体系-总图.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "00-01-🏠-知识库首页 的大纲"
+              "title": "OMC体系-总图 的大纲"
             }
           }
         ]
@@ -184,15 +187,18 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "b7256987cbe6506b",
+  "active": "3f407da74ab4b02e",
   "lastOpenFiles": [
+    "CLAUDE.md",
+    "学习路径-总图.canvas",
+    "00-全局总图.canvas",
+    "OMC体系-总图.canvas",
+    "00-入口/00-02-🚀-快速上手指南.md",
+    "00-入口/00-01-🏠-知识库首页.md",
+    "02-Tool系统/Tool系统-总图.canvas",
     "04-Hook系统/Hook系统-总图.canvas",
     "19-Harness设计/19-01-📐-Harness设计原理.md",
     "19-Harness设计",
-    "00-全局总图.canvas",
-    "学习路径-总图.canvas",
-    "OMC体系-总图.canvas",
-    "CLAUDE.md",
     "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
     "未命名.canvas",
     "16-OpenCode与开源Agent/16-03-🐍-claw-code-Python重写.md",
@@ -213,8 +219,6 @@
     "00-入口/00-04-📊-Dataview-仪表盘.md",
     "10-设计模式/10-01-♻️-核心设计模式.md",
     "00-入口/00-03-📋-学习进度追踪.md",
-    "00-入口/00-02-🚀-快速上手指南.md",
-    "00-入口/00-01-🏠-知识库首页.md",
     "18-MCP系统/18-01-📚-MCP系统.md",
     "06-上下文管理/06-01-📦-上下文管理.md",
     "17-Superpowers/17-04-🛠️-Superpowers最佳实践.md",
