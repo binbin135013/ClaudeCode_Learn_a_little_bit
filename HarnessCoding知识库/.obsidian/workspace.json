@@ -4,24 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "4cc9e4826d22ece8",
+        "id": "6dfaf98ce1c5da5d",
         "type": "tabs",
         "children": [
           {
-            "id": "3f407da74ab4b02e",
+            "id": "de4d467cef2e7b56",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "OMC体系-总图.canvas",
+                "file": "01-架构总览/01-02-📖-Claude-Code源码导读.canvas",
                 "viewState": {
-                  "x": 625,
-                  "y": 327.5,
+                  "x": 0,
+                  "y": 100,
                   "zoom": 0
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "OMC体系-总图"
+              "title": "01-02-📖-Claude-Code源码导读"
             }
           }
         ]
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OMC体系-总图.canvas",
+                "file": "01-架构总览/01-02-📖-Claude-Code源码导读.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +107,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "OMC体系-总图 的反向链接列表"
+              "title": "01-02-📖-Claude-Code源码导读 的反向链接列表"
             }
           },
           {
@@ -116,12 +116,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OMC体系-总图.canvas",
+                "file": "01-架构总览/01-02-📖-Claude-Code源码导读.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "OMC体系-总图 的出链列表"
+              "title": "01-02-📖-Claude-Code源码导读 的出链列表"
             }
           },
           {
@@ -159,13 +159,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OMC体系-总图.canvas",
+                "file": "01-架构总览/01-02-📖-Claude-Code源码导读.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "OMC体系-总图 的大纲"
+              "title": "01-02-📖-Claude-Code源码导读 的大纲"
             }
           }
         ]
@@ -187,25 +187,30 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "3f407da74ab4b02e",
+  "active": "de4d467cef2e7b56",
   "lastOpenFiles": [
-    "CLAUDE.md",
+    "05-记忆系统/05-00-🧠-记忆系统总图.canvas",
+    "04-Hook系统/Hook系统-总图.canvas",
+    "01-架构总览/01-02-📖-Claude-Code源码导读.canvas",
     "学习路径-总图.canvas",
-    "00-全局总图.canvas",
+    "01-架构总览/01-02-📖-Claude-Code源码导读.md",
     "OMC体系-总图.canvas",
+    "15-ClaudeCode最佳实践/15-00-⚡-最佳实践总图.canvas",
+    "14-方法论/14-00-🎯-方法论总图.canvas",
+    "13-OMC完全指南/13-00-🏁-OMC学习路径.canvas",
+    "12-质量保证/12-00-🧪-质量保证总图.canvas",
+    "07-OpenClaw实战/07-00-🚀-OpenClaw实战路径.canvas",
+    "14-方法论/14-05-⏸️-Phase-Gate门禁审查.md",
+    "CLAUDE.md",
     "00-入口/00-02-🚀-快速上手指南.md",
     "00-入口/00-01-🏠-知识库首页.md",
-    "02-Tool系统/Tool系统-总图.canvas",
-    "04-Hook系统/Hook系统-总图.canvas",
     "19-Harness设计/19-01-📐-Harness设计原理.md",
     "19-Harness设计",
     "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
-    "未命名.canvas",
     "16-OpenCode与开源Agent/16-03-🐍-claw-code-Python重写.md",
     "16-OpenCode与开源Agent/16-01-🚀-OpenCode与开源Agent指南.md",
     "16-OpenCode与开源Agent/16-02-🤖-oh-my-openagent全解析.md",
     "07-OpenClaw实战/07-01-🚀-环境搭建指南.md",
-    "01-架构总览/01-02-📖-Claude-Code源码导读.md",
     "07-OpenClaw实战/07-02-🤝-CC-OC协同工作流.md",
     "07-OpenClaw实战/🤝-CC-OC协同工作流.md",
     "update_links.py",
@@ -221,7 +226,6 @@
     "00-入口/00-03-📋-学习进度追踪.md",
     "18-MCP系统/18-01-📚-MCP系统.md",
     "06-上下文管理/06-01-📦-上下文管理.md",
-    "17-Superpowers/17-04-🛠️-Superpowers最佳实践.md",
     "16-OpenCode与开源Agent",
     "HarnessCoding知识库.zip",
     "18-MCP系统",

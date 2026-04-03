@@ -1,0 +1,143 @@
+{
+	"nodes":[
+		{
+			"id":"title1",
+			"type":"text",
+			"data":{"text":"第一优先级（核心必读）→ 理解系统心脏"},
+			"position":{"x":50,"y":50},
+			"size":{"width":340,"height":40},
+			"text":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"q1",
+			"type":"file",
+			"data":{"path":"01-架构总览/01-02-📖-Claude-Code源码导读.md","description":"src/query.ts — 主循环状态机（~1,732行）\n\nClaude Code 的心脏文件，理解状态机流转和事件分发"},
+			"position":{"x":50,"y":120},
+			"size":{"width":340,"height":100},
+			"file":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"q2",
+			"type":"file",
+			"data":{"path":"06-上下文管理/06-01-📦-上下文管理.md","description":"src/constants/prompts.ts — System Prompt（914行）\n\nPrompt组装、版本管理、缓存策略"},
+			"position":{"x":50,"y":260},
+			"size":{"width":340,"height":100},
+			"file":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"q3",
+			"type":"file",
+			"data":{"path":"02-Tool系统/02-01-🔧-Tool系统.md","description":"src/services/tools/toolExecution.ts — 工具执行管道（1,745行）\n\n14步工具执行管道，工具系统核心实现"},
+			"position":{"x":50,"y":400},
+			"size":{"width":340,"height":100},
+			"file":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"q4",
+			"type":"file",
+			"data":{"path":"04-Hook系统/04-01-🪝-Hook系统.md","description":"src/services/tools/toolHooks.ts — Hook系统（650行）\n\nHook注册触发、权限决策逻辑"},
+			"position":{"x":50,"y":540},
+			"size":{"width":340,"height":100},
+			"file":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"q5",
+			"type":"file",
+			"data":{"path":"03-权限系统/03-01-🔐-权限系统.md","description":"src/utils/permissions/ — 权限模型（27文件）\n\n沙箱、策略、审计全链路"},
+			"position":{"x":50,"y":680},
+			"size":{"width":340,"height":100},
+			"file":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"title2",
+			"type":"text",
+			"data":{"text":"第二优先级（重要模块）→ 掌握协作与安全"},
+			"position":{"x":500,"y":50},
+			"size":{"width":340,"height":40},
+			"text":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"q6",
+			"type":"file",
+			"data":{"path":"09-子Agent与协作/09-01-🤝-子Agent与协作.md","description":"src/tools/AgentTool/AgentTool.tsx — 多Agent调度（1,397行）\n\n主Agent如何创建管理子Agent、消息传递、状态同步"},
+			"position":{"x":500,"y":120},
+			"size":{"width":340,"height":100},
+			"file":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"q7",
+			"type":"file",
+			"data":{"path":"09-子Agent与协作/09-01-🤝-子Agent与协作.md","description":"src/tools/AgentTool/built-in/verificationAgent.ts — 验证Agent（~152行）\n\n精简强大的验证Agent设计，\"最狠prompt\""},
+			"position":{"x":500,"y":260},
+			"size":{"width":340,"height":100},
+			"file":"",
+			"x":0,
+			"y":0,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"note2",
+			"type":"text",
+			"data":{"text":"💡 学习方法\n① 浏览目录建立全局视图\n② 从 query.ts 开始按序阅读\n③ 对比 OpenClaw-Guide 理解设计决策\n④ 结合知识库章节深化理解\n⑤ 实践验证（修改代码+运行测试）"},
+			"position":{"x":500,"y":540},
+			"size":{"width":340,"height":140},
+			"text":"",
+			"x":-300,
+			"y":100,
+			"width":100,
+			"height":100
+		},
+		{
+			"id":"note1",
+			"type":"text",
+			"data":{"text":"📁 参考代码目录\ncc-learn/参考代码/\n├── claude-code/\n└── Claude-Code-x-OpenClaw-Guide/"},
+			"position":{"x":500,"y":400},
+			"size":{"width":340,"height":100},
+			"text":"",
+			"x":200,
+			"y":100,
+			"width":100,
+			"height":100
+		}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"q1","fromSide":"bottom","toNode":"q2","toSide":"top"},
+		{"id":"e2","fromNode":"q2","fromSide":"bottom","toNode":"q3","toSide":"top"},
+		{"id":"e3","fromNode":"q3","fromSide":"bottom","toNode":"q4","toSide":"top"},
+		{"id":"e4","fromNode":"q4","fromSide":"bottom","toNode":"q5","toSide":"top"},
+		{"id":"e5","fromNode":"q6","fromSide":"bottom","toNode":"q7","toSide":"top"}
+	]
+}

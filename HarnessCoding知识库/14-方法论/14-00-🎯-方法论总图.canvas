@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"center","type":"text","text":"方法论中枢","x":380,"y":300,"width":140,"height":60},
+		{"id":"n1","type":"file","file":"14-01-🎯-Skill选择决策树.md","x":100,"y":150,"width":200,"height":80},
+		{"id":"n2","type":"file","file":"14-02-🔄-Ralph循环最佳实践.md","x":100,"y":350,"width":200,"height":80},
+		{"id":"n3","type":"file","file":"14-03-🤖-Team协作拓扑.md","x":600,"y":150,"width":200,"height":80},
+		{"id":"n4","type":"file","file":"14-04-💡-Deep-Interview工作流.md","x":600,"y":350,"width":200,"height":80},
+		{"id":"n5","type":"file","file":"14-05-⏸️-Phase-Gate门禁审查.md","x":350,"y":530,"width":200,"height":80},
+		{"id":"note","type":"text","text":"方法论关系：\nRalph循环驱动执行\nTeam协作分配任务\nDeep-Interview深化理解\nPhase-Gate质量门禁\nSkill决策树选择路径","x":350,"y":80,"width":300,"height":90}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"center","fromSide":"left","toNode":"n1","toSide":"top"},
+		{"id":"e2","fromNode":"center","fromSide":"left","toNode":"n2","toSide":"bottom"},
+		{"id":"e3","fromNode":"center","fromSide":"right","toNode":"n3","toSide":"top"},
+		{"id":"e4","fromNode":"center","fromSide":"right","toNode":"n4","toSide":"bottom"},
+		{"id":"e5","fromNode":"center","fromSide":"bottom","toNode":"n5","toSide":"top"}
+	]
+}

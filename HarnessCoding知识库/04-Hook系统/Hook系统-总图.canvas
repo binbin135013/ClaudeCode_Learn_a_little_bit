@@ -1,83 +1,15 @@
 {
-  "nodes": [
-    {
-      "id": "a1b2c3d4e5f6g7h1",
-      "type": "text",
-      "x": 0,
-      "y": -200,
-      "width": 300,
-      "height": 60,
-      "color": "green",
-      "text": "# 🪝 Hook系统\n*生命周期扩展机制*"
-    },
-    {
-      "id": "a1b2c3d4e5f6g7h2",
-      "type": "text",
-      "x": -350,
-      "y": 0,
-      "width": 200,
-      "height": 80,
-      "color": "green",
-      "text": "## BeforeModel\n\n*拦截阶段*\n\nPreToolUse / UserPromptSubmit"
-    },
-    {
-      "id": "a1b2c3d4e5f6g7h3",
-      "type": "text",
-      "x": -100,
-      "y": 0,
-      "width": 200,
-      "height": 80,
-      "color": "green",
-      "text": "## BeforeExecute\n\n*预处理阶段*\n\nPreCompact / PermissionRequest"
-    },
-    {
-      "id": "a1b2c3d4e5f6g7h4",
-      "type": "text",
-      "x": 150,
-      "y": 0,
-      "width": 200,
-      "height": 80,
-      "color": "green",
-      "text": "## AfterExecute\n\n*后处理阶段*\n\nPostToolUse / PostCompact"
-    },
-    {
-      "id": "a1b2c3d4e5f6g7h5",
-      "type": "text",
-      "x": 400,
-      "y": 0,
-      "width": 200,
-      "height": 80,
-      "color": "green",
-      "text": "## FinalOutput\n\n*输出阶段*\n\nNotification / SessionEnd"
-    },
-    {
-      "id": "a1b2c3d4e5f6g7h6",
-      "type": "file",
-      "x": -175,
-      "y": 150,
-      "width": 350,
-      "height": 50,
-      "file": "04-Hook系统/04-01-🪝-Hook系统.md"
-    }
-  ],
-  "edges": [
-    {
-      "id": "e1b2c3d4e5f6g7h1",
-      "fromNode": "a1b2c3d4e5f6g7h2",
-      "toNode": "a1b2c3d4e5f6g7h3",
-      "color": "green"
-    },
-    {
-      "id": "e1b2c3d4e5f6g7h2",
-      "fromNode": "a1b2c3d4e5f6g7h3",
-      "toNode": "a1b2c3d4e5f6g7h4",
-      "color": "green"
-    },
-    {
-      "id": "e1b2c3d4e5f6g7h3",
-      "fromNode": "a1b2c3d4e5f6g7h4",
-      "toNode": "a1b2c3d4e5f6g7h5",
-      "color": "green"
-    }
-  ]
+	"nodes":[
+		{"id":"a1b2c3d4e5f6g7h1","type":"text","text":"# 🪝 Hook系统\n*生命周期扩展机制*","x":-400,"y":-400,"width":575,"height":100,"color":"green"},
+		{"id":"a1b2c3d4e5f6g7h6","type":"file","file":"04-Hook系统/04-01-🪝-Hook系统.md","x":225,"y":-450,"width":350,"height":170},
+		{"id":"a1b2c3d4e5f6g7h2","type":"text","text":"## BeforeModel\n\n*拦截阶段*\n\nPreToolUse / UserPromptSubmit","x":-480,"y":-160,"width":200,"height":180,"color":"green"},
+		{"id":"a1b2c3d4e5f6g7h3","type":"text","text":"## BeforeExecute\n\n*预处理阶段*\n\nPreCompact / PermissionRequest","x":-140,"y":-160,"width":200,"height":200,"color":"green"},
+		{"id":"a1b2c3d4e5f6g7h4","type":"text","text":"## AfterExecute\n\n*后处理阶段*\n\nPostToolUse / PostCompact","x":140,"y":-140,"width":200,"height":160,"color":"green"},
+		{"id":"a1b2c3d4e5f6g7h5","type":"text","text":"## FinalOutput\n\n*输出阶段*\n\nNotification / SessionEnd","x":460,"y":-140,"width":200,"height":160,"color":"green"}
+	],
+	"edges":[
+		{"id":"e1b2c3d4e5f6g7h1","fromNode":"a1b2c3d4e5f6g7h2","fromSide":"right","toNode":"a1b2c3d4e5f6g7h3","toSide":"left","color":"green"},
+		{"id":"e1b2c3d4e5f6g7h2","fromNode":"a1b2c3d4e5f6g7h3","fromSide":"right","toNode":"a1b2c3d4e5f6g7h4","toSide":"left","color":"green"},
+		{"id":"e1b2c3d4e5f6g7h3","fromNode":"a1b2c3d4e5f6g7h4","fromSide":"right","toNode":"a1b2c3d4e5f6g7h5","toSide":"left","color":"green"}
+	]
 }

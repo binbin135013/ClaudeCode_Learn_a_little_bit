@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"t","type":"text","text":"质量保证体系","x":380,"y":30,"width":220,"height":60},
+		{"id":"center","type":"file","file":"12-01-🧪-ultraqa循环.md","x":300,"y":290,"width":280,"height":100},
+		{"id":"n1","type":"file","file":"12-02-🔍-代码审查指南.md","x":80,"y":300,"width":200,"height":80},
+		{"id":"n2","type":"file","file":"12-03-🐛-系统性调试.md","x":600,"y":300,"width":200,"height":80},
+		{"id":"loop","type":"text","text":"测试 → 审查 → 调试 → 循环","x":300,"y":460,"width":280,"height":40}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"t","fromSide":"bottom","toNode":"center","toSide":"top"},
+		{"id":"e2","fromNode":"n1","fromSide":"right","toNode":"center","toSide":"left"},
+		{"id":"e3","fromNode":"center","fromSide":"right","toNode":"n2","toSide":"left"},
+		{"id":"e4","fromNode":"n2","fromSide":"bottom","toNode":"loop","toSide":"top"},
+		{"id":"e5","fromNode":"loop","fromSide":"left","toNode":"n1","toSide":"bottom"}
+	]
+}
