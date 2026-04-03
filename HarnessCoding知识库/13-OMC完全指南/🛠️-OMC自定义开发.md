@@ -1,0 +1,650 @@
+---
+type: omc-guide
+tags: [oh-my-claudecode, omc, custom-development, skill, hook, integration]
+description: OMC 自定义开发 - 自定义 Skill、Hook 配置、与 Claude Code 集成
+---
+
+# 🛠️ OMC 自定义开发
+
+## 1. 自定义 Skill 开发指南
+
+### 1.1 Skill 目录结构
+
+用户自定义 Skill 放在 `~/.claude/skills/` 目录下：
+
+```
+~/.claude/
+├── skills/                    # 用户自定义 Skill
+│   ├── my-skill.md
+│   ├── deploy-skill.md
+│   └── code-review-skill.md
+└── settings.json              # OMC 配置
+```
+
+### 1.2 Skill 文件模板
+
+```markdown
+---
+name: my-custom-skill
+description: 我的自定义技能说明
+type: skill
+trigger:
+  - "my-skill"
+  - "ms"
+version: "1.0.0"
+author: "Your Name"
+tags: [custom, utility]
+
+# Agent 配置
+agent:
+  model: sonnet
+  temperature: 0.7
+  max_tokens: 4096
+
+# 工作流配置
+workflow:
+  parallel: false
+  retry: 3
+  timeout: 300000
+
+# 依赖配置
+requires:
+  tools: [Read, Edit, Bash]
+  skills: []
+---
+
+# Skill 名称
+
+## 功能概述
+一句话描述技能的功能
+
+## 触发方式
+- 命令: `/skill my-custom-skill [参数]`
+- 触发词: `my-skill`
+
+## 参数说明
+
+| 参数 | 必填 | 说明 | 默认值 |
+|-----|-----|-----|-------|
+| param1 | 是 | 参数1说明 | - |
+| param2 | 否 | 参数2说明 | default |
+
+## 工作流程
+
+1. **步骤一**: 描述
+2. **步骤二**: 描述
+3. **步骤三**: 描述
+
+## 示例
+
+### 示例 1
+```bash
+my-skill --param1 value
+```
+
+### 示例 2
+```bash
+ms param1
+```
+
+## 注意事项
+- 注意事项1
+- 注意事项2
+```
+
+### 1.3 完整 Skill 示例
+
+#### 示例 1: Git Commit Skill
+
+```markdown
+---
+name: smart-commit
+description: 智能 Git 提交，根据变更生成规范提交信息
+type: skill
+trigger:
+  - "smart-commit"
+  - "sc"
+version: "1.0.0"
+author: "OMC User"
+tags: [git, commit, automation]
+
+agent:
+  model: sonnet
+  effort: medium
+
+requires:
+  tools: [Bash, Read]
+---
+
+# Smart Commit
+
+## 功能概述
+分析当前 Git 变更，自动生成符合 Conventional Commits 规范的提交信息。
+
+## 触发方式
+- 命令: `/skill smart-commit`
+- 触发词: `smart-commit`
+
+## 工作流程
+
+1. **获取变更**: `git diff --staged`
+2. **分析类型**: 根据变更内容判断类型
+   - feat: 新功能
+   - fix: 修复 bug
+   - docs: 文档变更
+   - style: 代码格式
+   - refactor: 重构
+   - test: 测试
+   - chore: 构建/工具
+3. **生成信息**: 组装提交信息
+4. **执行提交**: `git commit -m "..."`
+
+## 示例
+
+```bash
+smart-commit
+# 输出: feat(auth): 添加 JWT 认证支持
+```
+
+## 注意事项
+- 需要先 `git add` 将变更添加到暂存区
+- 如果没有变更，会提示先添加变更
+```
+
+#### 示例 2: Deploy Skill
+
+```markdown
+---
+name: deploy
+description: 一键部署应用到生产环境
+type: skill
+trigger:
+  - "deploy"
+  - "deploy-prod"
+version: "1.0.0"
+author: "OMC User"
+tags: [deploy, ci-cd, production]
+
+agent:
+  model: sonnet
+  effort: high
+
+workflow:
+  parallel: false
+  retry: 2
+  timeout: 600000
+
+requires:
+  tools: [Bash, Read, Edit]
+  skills: [ultraqa]
+---
+
+# Deploy Skill
+
+## 功能概述
+执行完整的部署流程：构建 → 测试 → 部署到生产环境。
+
+## 触发方式
+- 命令: `/skill deploy`
+- 触发词: `deploy`
+
+## 前置检查
+
+1. **分支检查**: 确保在 `main` 分支
+2. **变更检查**: 确保工作区干净
+3. **测试检查**: 运行完整测试套件
+
+## 工作流程
+
+1. **构建阶段**
+   ```bash
+   npm run build
+   ```
+
+2. **测试阶段**
+   ```bash
+   npm run test
+   npm run lint
+   ```
+
+3. **部署阶段**
+   ```bash
+   # 打包镜像
+   docker build -t myapp:latest .
+
+   # 推送到仓库
+   docker push myapp:latest
+
+   # 部署到 K8s
+   kubectl apply -f k8s/
+   ```
+
+## 示例
+
+```bash
+deploy
+# 或带环境
+deploy --env staging
+```
+
+## 注意事项
+- 部署前确保所有测试通过
+- 生产环境部署需要二次确认
+- 保留回滚能力
+```
+
+### 1.4 Skill 动态发现
+
+Claude Code 沿文件路径向上查找 `.claude/skills/`：
+
+```typescript
+discoverSkillDirsForPaths(filePath) {
+  // 沿路径向上搜索
+  // 跳过 .gitignored 目录
+  // 条件技能：paths frontmatter 激活
+}
+```
+
+### 1.5 条件触发 Skill
+
+```yaml
+---
+name: react-skill
+description: React 开发技能
+type: skill
+trigger:
+  - "react"
+paths: ["*.tsx", "*.jsx", "src/**"]  # 仅在这些路径下激活
+---
+```
+
+---
+
+## 2. 自定义 Hook 配置
+
+### 2.1 Hook 文件位置
+
+```
+~/.claude/
+├── hooks/
+│   ├── audit-log.js
+│   ├── context-inject.js
+│   └── notify.js
+└── settings.json
+```
+
+### 2.2 Hook 编写规范
+
+```javascript
+// ~/.claude/hooks/my-hook.js
+
+export const myHook = {
+  // 触发事件
+  event: "PostToolUse",
+
+  // 过滤条件 (可选)
+  filter: {
+    tool: ["Write", "Edit", "Bash"],  // 仅这些工具触发
+    pattern: /.*/                       // 可选正则过滤
+  },
+
+  // 处理函数
+  async handle(context) {
+    const { tool, input, result, timestamp } = context;
+
+    // 业务逻辑
+    await logOperation({ tool, input, timestamp });
+
+    // 返回响应
+    return {
+      status: "approve",           // 或 "block"
+      reason: "操作已记录"
+    };
+  }
+};
+```
+
+### 2.3 完整 Hook 示例
+
+#### 示例 1: 审计日志 Hook
+
+```javascript
+// ~/.claude/hooks/audit-log.js
+
+import { notepad_write_manual } from './notepad-utils.js';
+
+export const auditLogHook = {
+  event: "PostToolUse",
+  filter: {
+    tool: ["Write", "Edit", "Rm", "Bash"]
+  },
+
+  async handle(context) {
+    const { tool, input, result, timestamp, sessionId } = context;
+
+    // 构造日志条目
+    const logEntry = {
+      timestamp,
+      sessionId,
+      tool,
+      input: sanitizeInput(input),
+      status: result ? "success" : "failure"
+    };
+
+    // 写入审计日志
+    await appendToFile({
+      path: "~/.claude/omc/audit.log",
+      content: JSON.stringify(logEntry) + "\n"
+    });
+
+    return { status: "approve" };
+  }
+};
+
+// 输入脱敏
+function sanitizeInput(input) {
+  if (typeof input === 'string') {
+    return input.substring(0, 1000);  // 截断过长输入
+  }
+  if (input?.file_path) {
+    return { file_path: input.file_path };
+  }
+  return { _sanitized: true };
+}
+```
+
+#### 示例 2: 上下文自动注入 Hook
+
+```javascript
+// ~/.claude/hooks/context-inject.js
+
+export const contextInjectHook = {
+  event: "UserPromptSubmit",
+
+  async handle(context) {
+    const { input, cwd, filePath } = context;
+
+    // 读取项目上下文
+    const projectContext = await loadProjectContext(cwd);
+
+    // 注入额外上下文
+    return {
+      status: "modify",
+      additionalContext: `
+当前项目: ${projectContext.name}
+技术栈: ${projectContext.stack.join(', ')}
+分支: ${await getCurrentBranch()}
+最近提交: ${await getLastCommit()}
+      `.trim()
+    };
+  }
+};
+
+async function loadProjectContext(cwd) {
+  try {
+    const packageJson = await readFile(`${cwd}/package.json`);
+    const config = JSON.parse(packageJson);
+    return {
+      name: config.name,
+      stack: detectStack(config)
+    };
+  } catch {
+    return { name: 'unknown', stack: [] };
+  }
+}
+```
+
+#### 示例 3: 敏感操作拦截 Hook
+
+```javascript
+// ~/.claude/hooks/security-hook.js
+
+export const securityHook = {
+  event: "PreToolUse",
+  filter: {
+    tool: "Bash",
+    pattern: /rm\s+-rf\s+\/|drop\s+database|mkfs|/i
+  },
+
+  async handle(context) {
+    const { command, tool } = context;
+
+    // 记录危险操作
+    await notepad_write_priority({
+      content: `⚠️ 危险命令被拦截: ${command}`
+    });
+
+    return {
+      status: "block",
+      reason: `危险命令已拦截: ${command}`
+    };
+  }
+};
+```
+
+### 2.4 Hook 注册
+
+```json
+// ~/.claude/settings.json
+{
+  "hooks": {
+    "enabled": true,
+    "items": [
+      "./hooks/audit-log.js",
+      "./hooks/context-inject.js",
+      "./hooks/security-hook.js"
+    ]
+  }
+}
+```
+
+### 2.5 Hook 优先级
+
+```
+userSettings > projectSettings > localSettings > pluginHook > builtinHook > sessionHook
+```
+
+---
+
+## 3. 与 Claude Code 集成
+
+### 3.1 OMC 在 Claude Code 中的位置
+
+```
+┌─────────────────────────────────────────────────────┐
+│                   用户层                             │
+│  CLI / IDE / Bridge                                │
+└────────────────────┬────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────┐
+│               Claude Code 核心层                     │
+│  QueryEngine + Tool + Permission + Memory + Hook     │
+└────────────────────┬────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────┐
+│               OMC 编排层                             │
+│  Agent Catalog + Skill Registry + State + Notepad   │
+└─────────────────────────────────────────────────────┘
+```
+
+### 3.2 OMC 入口点
+
+| 入口 | 说明 |
+|-----|------|
+| `/omc` | 进入 OMC 交互模式 |
+| `/oh-my-claudecode:<skill>` | 直接调用 Skill |
+| `/team N` | 启动 Team 协作 |
+| `/cancel` | 取消 OMC 任务 |
+
+### 3.3 OMC 状态与 Claude Code 状态
+
+OMC 有独立的状态存储，不影响 Claude Code 原有状态：
+
+```
+.omc/state/
+├── sessions/{sessionId}/
+│   ├── ultrawork-state.json    # ultrawork 并行状态
+│   └── mission-state.json       # 任务状态
+├── agent-replay-{sessionId}.jsonl  # Agent 操作记录
+└── notepad.md                   # 笔记
+
+# Claude Code 状态
+.claude/state/
+└── ...
+```
+
+### 3.4 Tool 调用桥接
+
+OMC Agent 通过标准 Tool 接口与 Claude Code 交互：
+
+```typescript
+// OMC Agent 调用 Claude Code Tool
+const result = await tools.Read({
+  file_path: "./src/index.ts"
+});
+
+// OMC 返回结果给 Claude Code
+return {
+  content: result,
+  tool: "Read"
+};
+```
+
+### 3.5 权限系统集成
+
+OMC Agent 运行在 Claude Code 权限系统之下：
+
+```
+OMC Agent 操作
+    │
+    ▼
+权限检查 (Claude Code Permission System)
+    │
+    ├── 通过 → 执行操作
+    │
+    └── 拒绝 → 返回权限错误
+```
+
+### 3.6 记忆系统集成
+
+| OMC 记忆 | Claude Code 记忆 | 用途 |
+|---------|-----------------|------|
+| Notepad | Memory | 跨会话重要信息 |
+| Project Memory | Memory | 项目上下文 |
+| OMC State | State | 任务状态 |
+
+### 3.7 MCP 集成
+
+OMC 可以调用 MCP (Model Context Protocol) 服务：
+
+```javascript
+// ~/.claude/settings.json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "~/projects"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"]
+    }
+  }
+}
+```
+
+### 3.8 自定义 OMC Agent
+
+创建自定义 Agent：
+
+```typescript
+// ~/.omc/agents/my-agent.ts
+
+import { createAgent } from 'oh-my-claudecode';
+
+export const myAgent = createAgent({
+  name: 'my-agent',
+  description: '我的自定义 Agent',
+  model: 'sonnet',
+
+  // 系统提示
+  systemPrompt: `
+你是一个专业的 [角色名称]。
+专注于 [领域]。
+遵循 [原则]。
+  `.trim(),
+
+  // 可用工具
+  tools: ['Read', 'Edit', 'Bash', 'Glob', 'Grep'],
+
+  // 生命周期钩子
+  hooks: {
+    onStart: async () => {
+      await notepad_write_working({ content: `Agent ${name} 已启动` });
+    },
+    onComplete: async (result) => {
+      await notepad_write_manual({ content: `Agent ${name} 完成: ${result}` });
+    }
+  }
+});
+```
+
+### 3.9 调试 OMC
+
+```bash
+# 诊断 OMC 状态
+/oh-my-claudecode:omc-doctor
+
+# 查看 OMC 日志
+cat ~/.claude/omc/logs/omc.log
+
+# 重置 OMC 状态
+/oh-my-claudecode:state-clear
+
+# 查看活跃状态
+state_list_active
+```
+
+---
+
+## 4. 最佳实践
+
+### 4.1 Skill 开发最佳实践
+
+| 实践 | 说明 |
+|-----|------|
+| 单一职责 | 每个 Skill 只做一件事 |
+| 清晰命名 | 名称和触发词清晰对应 |
+| 文档完整 | 包含示例和注意事项 |
+| 错误处理 | 处理好边界情况 |
+| 可组合 | 设计时考虑与其他 Skill 组合 |
+
+### 4.2 Hook 开发最佳实践
+
+| 实践 | 说明 |
+|-----|------|
+| 轻量处理 | Hook 应快速执行，不要做重操作 |
+| 错误安全 | 返回 approve 防止阻断正常流程 |
+| 资源清理 | 使用 try-finally 确保清理 |
+| 日志适当 | 记录关键操作，不过度日志 |
+
+### 4.3 性能考虑
+
+| 场景 | 建议 |
+|-----|------|
+| 大量并行任务 | 使用 ultrawork 控制并发数 |
+| 长时间任务 | 使用 ralph 循环配合超时 |
+| 复杂协作 | 使用 team 配合状态持久化 |
+| 资源敏感 | 使用 Haiku 模型处理轻量任务 |
+
+---
+
+## 5. 相关资源
+
+- [[🏁-OMC入门]] - 安装与基础配置
+- [[🎯-OMC核心概念]] - Agent、Skill、Hook 详解
+- [[🔄-OMC工作流]] - 四大工作流详解
+- [[../08-Skill系统/📚-Skill系统]] - Claude Code Skill 系统
+- [[../04-Hook系统/🪝-Hook系统]] - Claude Code Hook 系统

@@ -2,6 +2,10 @@
 type: system
 tags: [claude-code, tool, harness, practice]
 description: Claude Code Tool 系统核心机制 + 实战练习
+source:
+  - 官方源码: "参考代码/claude-code/src/"
+  - 源码分析: "参考代码/claude-code-analysis/"
+  - 书籍参考: "参考文档/第一部分-基础篇/03-工具系统-Agent的双手.md"
 ---
 
 # 🔧 Tool 系统
@@ -166,6 +170,7 @@ const ReadTool = buildTool({
 | `Mkdir` | write | 创建目录 |
 | `Rm` | destructive | 删除文件 |
 | `Glob` | readOnly | 搜索文件（按模式） |
+| `Grep` | readOnly | 搜索文件内容（按正则） |
 | `CopilotEdit` | write | AI 辅助编辑建议 |
 
 **实际例子：**
@@ -404,7 +409,7 @@ ToolRegistry.register(MyTool);
 
 可以！在 Claude Code 设置中可以禁用特定工具。
 
-## 8. StreamingToolExecutor 四阶段状态机
+## 7. StreamingToolExecutor 四阶段状态机
 
 流式工具执行器的完整状态机：
 
@@ -453,7 +458,7 @@ const partitions = partitionToolCalls(toolCalls, (tool) => ({
 结果：Batch1[Read(a,b)]并行, Batch2[Bash]独占, Batch3[Read(c)]等待Batch2
 ```
 
-## 9. 延迟工具发现
+## 8. 延迟工具发现
 
 当工具数量超过阈值时，使用 `ToolSearchTool` 按需加载：
 
@@ -467,7 +472,7 @@ const partitions = partitionToolCalls(toolCalls, (tool) => ({
 
 **节省**：显著减少 prompt token
 
-## 10. buildTool 防御性默认值
+## 9. buildTool 防御性默认值
 
 ```typescript
 const defaults = {
@@ -485,5 +490,27 @@ const defaults = {
 
 - [[../01-架构总览/📐-架构概览]] - Tool 在架构中的位置
 - [[../03-权限系统/🔐-权限系统]] - 工具的安全包装
-- [[../07-QueryEngine/⚙️-QueryEngine]] - 工具的调用方
+- [[../11-QueryEngine/⚙️-QueryEngine]] - 工具的调用方
 - [[../10-设计模式/♻️-核心设计模式]] - 工厂模式
+
+---
+
+> [!cite]- 知识来源
+
+| 知识点 | 来源 | 说明 |
+|--------|------|------|
+| **五元素协议（Name/Schema/Permissions/Execution/Rendering）** | lintsinghua/claude-code-book 第3章 | 工具定义协议的详细解析 |
+| **buildTool 工厂函数** | 官方源码 [[参考代码/claude-code/src/Tool.ts]] | 工厂模式的标准实现，fail-closed 保守原则 |
+| **Zod Schema 双重职责** | lintsinghua/claude-code-book 第3章 | 运行时验证 + API通信的类型安全屏障 |
+| **三层权限检查模型** | 官方源码 [[参考代码/claude-code/src/services/tools/toolExecution.ts]] | validateInput → hasPermissions → checkPermissions |
+| **工具分类（8文件系统/6 Git等）** | 官方源码 [[参考代码/claude-code/src/constants/tools.ts]] | getAllBaseTools() 完整工具清单 |
+| **StreamingToolExecutor 四阶段状态机** | 官方源码 [[参考代码/claude-code/src/services/tools/StreamingToolExecutor.ts]] | queued → executing → completed → yielded |
+| **并发分区策略（partitionToolCalls）** | 官方源码 [[参考代码/claude-code/src/services/tools/toolOrchestration.ts]] | 贪心算法按 isConcurrencySafe 分批执行 |
+| **贪心分区示例** | liuup/claude-code-analysis 分析文档 | Batch1[Read并行] → Batch2[Bash独占] → Batch3[Read等待] |
+| **流式执行优势（50%+速度提升）** | lintsinghua/claude-code-book 第3章 | 边接收边执行的流水线模式 |
+| **ToolSearchTool 延迟发现** | 官方源码 [[参考代码/claude-code/src/tools/ToolSearchTool/ToolSearchTool.ts]] | 按需加载减少 prompt token |
+| **buildTool 防御性默认值** | 官方源码 [[参考代码/claude-code/src/Tool.ts]] | isConcurrencySafe/destructive 默认 false |
+| **BashTool 危险性和错误传播** | lintsinghua/claude-code-book 第3章 | Bash失败取消并行兄弟工具 |
+| **FileReadTool/FileEditTool/FileWriteTool 分工** | lintsinghua/claude-code-book 第3章 | CRUD 模式，Edit 使用 old_string 精确替换 |
+| **GlobTool/GrepTool 专门化优势** | lintsinghua/claude-code-book 第3章 | 结构化输出、权限控制、性能优化 |
+| **工具发现机制（延迟加载）** | 个人经验总结 | 基于实际使用验证 |
