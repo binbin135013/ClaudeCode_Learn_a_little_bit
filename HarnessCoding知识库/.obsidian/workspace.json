@@ -11,14 +11,17 @@
             "id": "b7256987cbe6506b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "15-ClaudeCode最佳实践/⚡-ClaudeCode插件推荐.md",
-                "mode": "source",
-                "source": false
+                "file": "未命名.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "⚡-ClaudeCode插件推荐"
+              "icon": "lucide-layout-dashboard",
+              "title": "未命名"
             }
           }
         ]
@@ -94,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "15-ClaudeCode最佳实践/⚡-ClaudeCode插件推荐.md",
+                "file": "未命名.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +107,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "⚡-ClaudeCode插件推荐 的反向链接列表"
+              "title": "未命名 的反向链接列表"
             }
           },
           {
@@ -113,12 +116,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "15-ClaudeCode最佳实践/⚡-ClaudeCode插件推荐.md",
+                "file": "未命名.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "⚡-ClaudeCode插件推荐 的出链列表"
+              "title": "未命名 的出链列表"
             }
           },
           {
@@ -156,13 +159,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "15-ClaudeCode最佳实践/⚡-ClaudeCode插件推荐.md",
+                "file": "未命名.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "⚡-ClaudeCode插件推荐 的大纲"
+              "title": "未命名 的大纲"
             }
           }
         ]
@@ -185,41 +188,42 @@
   },
   "active": "b7256987cbe6506b",
   "lastOpenFiles": [
-    "18-MCP系统/📚-MCP系统.md",
+    "16-OpenCode与开源Agent/16-04-🦀-claw-code-parity-Rust实现.md",
+    "未命名.canvas",
+    "16-OpenCode与开源Agent/16-03-🐍-claw-code-Python重写.md",
+    "16-OpenCode与开源Agent/16-01-🚀-OpenCode与开源Agent指南.md",
+    "16-OpenCode与开源Agent/16-02-🤖-oh-my-openagent全解析.md",
+    "07-OpenClaw实战/07-01-🚀-环境搭建指南.md",
+    "01-架构总览/01-02-📖-Claude-Code源码导读.md",
+    "07-OpenClaw实战/07-02-🤝-CC-OC协同工作流.md",
+    "07-OpenClaw实战/🤝-CC-OC协同工作流.md",
+    "update_links.py",
+    "09-子Agent与协作/09-01-🤝-子Agent与协作.md",
+    "08-Skill系统/08-01-📚-Skill系统.md",
+    "07-OpenClaw实战/07-05-⚙️-CI-CD与自动化.md",
+    "07-OpenClaw实战/07-04-🐳-Docker部署.md",
+    "07-OpenClaw实战/07-03-🔐-安全最佳实践.md",
+    "00-入口/00-06-📖-参考代码索引.md",
+    "00-入口/00-05-📚-知识来源索引.md",
+    "00-入口/00-04-📊-Dataview-仪表盘.md",
+    "10-设计模式/10-01-♻️-核心设计模式.md",
+    "00-入口/00-03-📋-学习进度追踪.md",
+    "00-入口/00-02-🚀-快速上手指南.md",
+    "00-入口/00-01-🏠-知识库首页.md",
+    "18-MCP系统/18-01-📚-MCP系统.md",
+    "06-上下文管理/06-01-📦-上下文管理.md",
+    "17-Superpowers/17-04-🛠️-Superpowers最佳实践.md",
+    "17-Superpowers/17-03-🎯-Superpowers方法论.md",
+    "17-Superpowers/17-02-🧠-Superpowers核心Skill.md",
+    "17-Superpowers/17-01-🚀-Superpowers入门.md",
+    "16-OpenCode与开源Agent",
+    "HarnessCoding知识库.zip",
     "18-MCP系统",
-    "16-OMC完全指南/🛠️-OMC自定义开发.md",
-    "16-OMC完全指南/🔄-OMC工作流.md",
-    "16-OMC完全指南/🎯-OMC核心概念.md",
-    "16-OMC完全指南/🏁-OMC入门.md",
     "16-OMC完全指南",
-    "14-方法论/💡-Deep-Interview工作流.md",
-    "14-方法论/🎯-Skill选择决策树.md",
-    "13-OMC完全指南/🛠️-OMC自定义开发.md",
-    "13-OMC完全指南/🔄-OMC工作流.md",
-    "13-OMC完全指南/🏁-OMC入门.md",
-    "08-Skill系统/📚-Skill系统.md",
-    "13-OMC完全指南/🎯-OMC核心概念.md",
-    "12-质量保证/🧪-ultraqa循环.md",
-    "17-Superpowers/🛠️-Superpowers最佳实践.md",
-    "17-Superpowers/🧠-Superpowers核心Skill.md",
-    "17-Superpowers/🚀-Superpowers入门.md",
-    "17-Superpowers/🎯-Superpowers方法论.md",
     "17-Superpowers",
     "13-OMC完全指南",
-    "15-Superpowers/🧠-Superpowers核心Skill.md",
-    "15-Superpowers/🛠️-Superpowers最佳实践.md",
-    "15-Superpowers/🚀-Superpowers入门.md",
-    "15-Superpowers/🎯-Superpowers方法论.md",
     "15-Superpowers",
-    "14-方法论/🤖-Team协作拓扑.md",
-    "14-方法论/🔄-Ralph循环最佳实践.md",
     "14-方法论",
-    "15-ClaudeCode最佳实践/📋-Step-by-Step教程.md",
-    "15-ClaudeCode最佳实践/🏗️-整体架构建议.md",
-    "15-ClaudeCode最佳实践/🎯-自定义Skill开发.md",
-    "13-方法论",
-    "15-ClaudeCode最佳实践",
-    "14-Superpowers",
-    "11-方法论"
+    "13-方法论"
   ]
 }
